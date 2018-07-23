@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>控制系统</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- 标签颜色  -->
+    <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="assets/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- 标签按钮图标 -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- 样式 -->
+    <link href="css/style_responsive.css" rel="stylesheet" />
+    <!-- 自适应 -->
+    <link href="css/style_default.css" rel="stylesheet" id="style_color" />
+    <!-- 背景色 -->
+    <!-- <link href="css/lc_switch.css" rel="stylesheet"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 按钮组排序 -->
+    <link rel="stylesheet" type="text/css" href="assets/chosen-bootstrap/chosen/chosen.css" />
+    <link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/lc_switch.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="container" class="row-fluid">
+
+        <!-- BEGIN PAGE -->
+        <div id="main-content">
+            <!-- BEGIN PAGE CONTAINER-->
+            <div class="container-fluid">
+                <!-- BEGIN PAGE HEADER-->
+                <div class="row-fluid">
+                    <h3 class="page-title">
+                        控制系统
+                        <small>自动控制</small>
+                    </h3>
+                </div>
+                <!-- END PAGE HEADER-->
+                <!-- BEGIN PAGE CONTENT-->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="widget box blue" id="form_wizard_1">
+                            <div class="widget-title">
+                                <h4>
+                                    <i class="icon-reorder"></i> 自动控制 -
+                                    <span class="step-title">Step 1 of 3</span>
+                                </h4>
+                                <span class="tools">
+                                    <a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+                                </span>
+                            </div>
+                            <div class="widget-body form">
+                                <form action="#" class="form-horizontal">
+                                    <div class="form-wizard">
+                                        <div class="navbar steps">
+                                            <div class="navbar-inner">
+                                                <ul class="row-fluid">
+                                                    <li class="span3">
+                                                        <a href="#tab1" data-toggle="tab" class="step active">
+                                                            <span class="number">1</span>
+                                                            <span class="desc">
+                                                                <i class="icon-ok"></i> 第一步</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="span3">
+                                                        <a href="#tab2" data-toggle="tab" class="step">
+                                                            <span class="number">2</span>
+                                                            <span class="desc">
+                                                                <i class="icon-ok"></i> 第二步</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="span3">
+                                                        <a href="#tab4" data-toggle="tab" class="step">
+                                                            <span class="number">3</span>
+                                                            <span class="desc">
+                                                                <i class="icon-ok"></i> 第三步</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div id="bar" class="progress progress-striped">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab1">
+                                                <h3>第一步</h3>
+                                                <div class="control-group">
+                                                    <label class="control-label">蓄水时间</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" min="0" min="0" id="xushui" onchange="textChange(id,'xushui2')"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">蓄水后延时</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" min="0" min="0" id="yanshi" onchange="textChange(id,'yanshi2')"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">同时浇水数量</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" min="0" min="0" id="shuliang" onchange="textChange(id,'shuliang2')"></input>
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label">功 率</label>
+                                                    <div class="controls">
+                                                        <form action="power-option">
+                                                            <select id="power" onchange="textChange(id,'power2')">
+                                                                <option value="High">高</option>
+                                                                <option value="Mid">中</option>
+                                                                <option value="Low">低</option>
+                                                            </select>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab2">
+                                                <h4>第二步</h4>
+                                                <div class="control-group">
+                                                    <label class="control-label">模块1浇水时长</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" id="water_1_time" placeholder="0" min="0" />
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">模块2浇水时长</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" id="water_2_time" placeholder="0" min="0" />
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">模块3浇水时长</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" id="water_3_time" placeholder="0" min="0" />
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">模块4浇水时长</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" id="water_4_time" placeholder="0" min="0" />
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">模块5浇水时长</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" id="water_5_time" placeholder="0" min="0" />
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">模块6浇水时长</label>
+                                                    <div class="controls">
+                                                        <input type="number" class="form_control" id="water_6_time" placeholder="0" min="0" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tab-pane" id="tab4">
+                                                <h4>第三步</h4>
+                                                <div class="control-group">
+                                                    <label class="control-label">蓄水时间</label>
+                                                    <div class="controls">
+                                                        <input class="number" id="xushui2" disabled placeholder="0" min="0"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">蓄水后延时</label>
+                                                    <div class="controls">
+                                                        <input class="number" id="yanshi2" disabled placeholder="0" min="0"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">同时浇水数量</label>
+                                                    <div class="controls">
+                                                        <input class="number" id="shuliang2" disabled placeholder="0" min="0"></input>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">水泵功率</label>
+                                                    <div class="controls">
+                                                        <input class="text" id="power2" disabled placeholder="High"></input>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="control-group">
+                                                    <label class="control-label">自动控制进度</label>
+                                                    <div class="progress-bar controls" id="proBar" style="width:0px;background-color:rgb(25, 180, 207);color:white">&puncsp;</div>
+
+                                                </div>
+                                                <div class="control-group">
+                                                        <input type="button" id="btn1" onclick="tt()" value="start" class="controls">
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="form-actions clearfix">
+                                            <a href="javascript:;" class="btn button-previous">
+                                                <i class="icon-angle-left"></i> 上一步
+                                            </a>
+                                            <a href="javascript:;" class="btn btn-primary blue button-next">
+                                                下一步
+                                                <i class="icon-angle-right"></i>
+                                            </a>
+                                            <a href="javascript:;" class="btn btn-success button-submit">
+                                                提交
+                                                <i class="icon-ok"></i>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT-->
+                <!-- BEGIN PAGE CONTENT-->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="widget box blue" id="form_wizard_1">
+                            <div class="widget-title">
+                                <h4>
+                                    <i class="icon-reorder"></i> 实时控制
+                                </h4>
+                                <span class="tools">
+                                    <a href="javascript:;" class="icon-chevron-down"></a>
+                                    <a href="javascript:;" class="icon-remove"></a>
+                                </span>
+                            </div>
+                            <div class="widget-body form">
+                                <form action="#" class="form-horizontal">
+                                    <div class="form-wizard">
+                                        <div class="navbar steps">
+                                            <div class="navbar-inner">
+                                                <ul class="row-fluid">
+                                                    <li class="span3">
+                                                        <hr class="feature-divider">
+                                                        <div class="col-md-4">
+                                                            <p>水&nbsp;&nbsp;&nbsp;&nbsp;泵
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="radio-1" value="10" class="lcs_check" key="pump" autocomplete="off" />
+                                                            </p>
+                                                            <p>进水阀
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="radio-1" value="7" class="lcs_check lcs_tt2" key="valve1" autocomplete="off" />
+                                                            </p>
+                                                            <p>出水阀
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="radio-1" value="8" class="lcs_check lcs_tt2" key="valve1" autocomplete="off" />
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <p>内阀1
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="check-1" value="1" class="lcs_check" key="valve2" autocomplete="off" />
+
+                                                            </p>
+                                                            <p>内阀2
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="check-2" value="2" class="lcs_check " key="valve2" autocomplete="off" />
+
+                                                            </p>
+                                                            <p>内阀3
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="check-3" value="3" class="lcs_check" key="valve2" autocomplete="off" />
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <p>内阀4
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="check-4" value="4" class="lcs_check" key="valve2" autocomplete="off" />
+                                                            </p>
+                                                            <p>内阀5 
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="check-5" value="5" class="lcs_check" key="valve2" autocomplete="off" />
+                                                            </p>
+                                                            <p>内阀6
+                                                                <!-- <a class="btn btn-default" type="button" data-toggle="button" href="#" role="button">开关</a> -->
+                                                                <input type="checkbox" name="check-6" value="6" class="lcs_check " key="valve2" autocomplete="off" />
+                                                            </p>
+                                                        </div>
+
+                                                        <!-- END PAGE CONTENT-->
+                                            </div>
+                                            <!-- END PAGE CONTAINER-->
+                                        </div>
+                                        <!-- END PAGE -->
+                                    </div>
+                                    <script src="js/jquery-1.8.3.min.js"></script>
+                                    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+                                    <script src="assets/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+                                    <script type="text/javascript" src="assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
+                                    <!-- <script type="text/javascript" src="assets/uniform/jquery.uniform.min.js"></script> -->
+                                    <script src="js/scripts.js"></script>
+                                    <script src="js/lc_switch.js" type="text/javascript"></script>
+                                    <script>
+                                        jQuery(document).ready(function () {
+                                            // initiate layout and plugins
+                                            App.init();
+                                        });
+                                    </script>
+                                    <script type="text/javascript">
+                                        $(document).ready(function (e) {
+                                            $('input').lc_switch();
+                                            // triggered each time a field changes status
+                                            $('body').delegate('.lcs_check', 'lcs-statuschange', function () {
+                                                var status = ($(this).is(':checked')) ? 'checked' : 'unchecked';
+                                                console.log('field changed status: ' + status);
+                                            });
+
+                                            // triggered each time a field is checked
+                                            $('body').delegate('.lcs_check', 'lcs-on', function () {
+                                                console.log('field is checked');
+                                            });
+
+
+                                            // triggered each time a is unchecked
+                                            $('body').delegate('.lcs_check', 'lcs-off', function () {
+                                                console.log('field is unchecked');
+                                            });
+                                        });
+                                    </script>
+                                    <script>
+                                        function textChange(arg1, arg2) {
+                                            var text = $('#' + arg1).val();
+                                            $('#' + arg2).val(text);
+                                        }
+                                    </script>
+                                    
+                                   
+                                    <script type="text/javascript">
+                                        function tt() {
+                                            var barObj = document.getElementById("proBar");
+                                            var currentWidth = parseInt(barObj.style.width.substring(0, barObj.style.width.length - 1));
+                                            if (currentWidth < 210) {
+                                                barObj.style.width = (currentWidth + 1) + "px";
+                                            }
+                                            else { return; }
+                                            setTimeout("tt()", 1);
+                                        }   
+                                    </script>
+                                    
+
+
+
+
+
+
+</body>
+
+
+</html>
